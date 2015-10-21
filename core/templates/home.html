@@ -2,145 +2,175 @@
 {% load staticfiles %}
 
 {% block body %}
-  <section class="home-header">
-    <div class="parallax-container">
-      <div class="parallax">
-        <img src="http://placehold.it/1300x550">
-      </div>
-    </div>
-  </section>
-
-  <section class="home-about">
-    <div class="container">
-      <h2 class="center-align">About Me</h2>
-      <div class="row">
-        <div class="col s4" data-sr="move 50px, enter left">
-          <img src="http://placehold.it/500x500">
-        </div>
-        <div class="col s8" data-sr="move 50px, enter right">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
-          <blockquote>
-            This is an example quotation that uses the blockquote tag.
-          </blockquote>
-          <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
+  <div class="home">
+    <section class="header">
+      <div class="parallax-container">
+        <div class="parallax">
+          <img src="http://placehold.it/1300x550">
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="home-projects">
-    <div class="container">
-      <h2 class="center-align">My Projects</h2>
-      <div class="row">
-        <div class="col s12 m6" data-sr="scale up 40%, enter top, move 50px">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="{% static 'img/sites/joe2go.png' %}">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6" data-sr="scale up 40%, enter right, ease 200px, over 1.5s, spin 180deg, reset">
-          <div class="card" data-sr>
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="{% static 'img/sites/reallife.png' %}">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6" data-sr="enter left, move 50px, reset">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="{% static 'img/sites/travelblogwave.png' %}">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6">
-          <div class="card" data-sr="enter right, move 50px, over 1.5s">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="{% static 'img/sites/rentversity.png' %}">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Rentversity<i class="material-icons right">more_vert</i></span>
-              <p><a href="https://rentversity.herokuapp.com">Visit Rentversity</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Rentversity<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-              <span class="chip">Django</span>
-              <span class="chip">Google Maps</span>
-              <span class="chip">Scraping</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-contact">
-    <h2 class="center-align">Contact Me</h2>
-  </section>
-
-  <footer class="page-footer white-text">
-    <div class="container">
-      <div class="row">
-        <div class="col s6">
-          <h5>Made with love using...</h5>
-          <span class="chip">Materialize.css</span>
-          <span class="chip">JQuery</span>
-          <span class="chip">Scroll Reveal JS</span>
-          <span class="chip">Django</span>
-        </div>
-        <div class="col s6">
-          <h5>Connect with me, I don't bite!</h5>
-          <div class="social-links">
-            <a href="https://www.twitter.com/awwester">
-              <i class="fa fa-2x fa-twitter" data-sr="move 150px, enter left, over 2.5s"></i>
-            </a>
-            <a href="https://www.twitter.com/awwester">
-              <i class="fa fa-2x fa-border fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
+    <section class="about" data-sr="move 50px, enter top">
       <div class="container">
-      © 2015 Adam Wester
+        <h2 class="center-align">About Me</h2>
+        <div class="row">
+          <div class="col s4" data-sr="move 50px, enter left">
+            <img class="circle" src="http://placehold.it/500x500">
+          </div>
+          <div class="col s8" data-sr="move 50px, enter right">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
+            <blockquote>
+              This is an example quotation that uses the blockquote tag.
+            </blockquote>
+            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  {% block js %}
-    <script src="{% static 'js/scrollReveal.min.js' %}"></script>
+    <section class="projects">
+      <div class="container">
+        <h2 class="center-align">My Projects</h2>
+        <div class="row">
+          <div class="col s12 m6" data-sr="scale up 40%, enter top, move 50px">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{% static 'img/sites/joe2go.png' %}">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6" data-sr="scale up 40%, enter right, ease 200px, over 1.5s, spin 180deg, reset">
+            <div class="card" data-sr>
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{% static 'img/sites/reallife.png' %}">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6" data-sr="enter left, move 50px">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{% static 'img/sites/travelblogwave.png' %}">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card" data-sr="enter right, move 50px, over 1.5s">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{% static 'img/sites/rentversity.png' %}">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Rentversity<i class="material-icons right">more_vert</i></span>
+                <p><a href="https://rentversity.herokuapp.com">Visit Rentversity</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Rentversity<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                <span class="chip">Django</span>
+                <span class="chip">Google Maps</span>
+                <span class="chip">Scraping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script>
-      window.sr = new scrollReveal();
-      $(document).ready(function(){
-        $('.parallax').parallax();
-      });
-    </script>
-  {% endblock %}
+    <section class="contact" data-sr="hustle 100px, enter left">
+      <div class="container">
+        <h2 class="center-align">Contact Me</h2>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col m4 s12">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field col m4 s12">
+                <input id="first_name" type="text" class="validate">
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col m4 s12">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">message</i>
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">So, what are you thinking?</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer white-text">
+      <div class="container">
+        <div class="row">
+          <div class="col s6">
+            <h5>Made with love using...</h5>
+            <span class="chip">Materialize</span>
+            <span class="chip">Django</span>
+            <span class="chip">JQuery</span>
+            <span class="chip">Scroll Reveal JS</span>
+          </div>
+          <div class="col s6">
+            <h5>Connect with me, I don't bite!</h5>
+            <div class="social-links">
+              <a href="https://www.twitter.com/awwester">
+                <i class="fa fa-2x fa-twitter" data-sr="move 150px, enter left, over 4s"></i>
+              </a>
+              <a href="https://www.linkedin.com/profile/view?id=AAIAAAJXMg8B5ThzH_LCi7clf20KuONnxNGNj5w">
+                <i class="fa fa-2x fa-border fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2015 Adam Wester
+        </div>
+      </div>
+    </footer>
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script src="{% static 'js/scrollReveal.min.js' %}"></script>
+
+  <script>
+    window.sr = new scrollReveal();
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+  </script>
 {% endblock %}
