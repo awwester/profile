@@ -6,6 +6,8 @@
 .social-links {
   a {
     color: inherit;
+    padding-left: 15px;
+    padding-right: 15px;
 
     &:hover { color: darken(#fff, 10%);}
   }
