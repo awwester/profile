@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block body %}
-  <section class="header">
+  <section class="home-header">
     <div class="parallax-container">
       <div class="parallax">
         <img src="http://placehold.it/1300x550">
@@ -10,25 +10,62 @@
     </div>
   </section>
 
-  <section class="about">
+  <section class="home-about">
     <div class="container">
       <h2 class="center-align">About Me</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
-      <blockquote>
-        This is an example quotation that uses the blockquote tag.
-      </blockquote>
-      <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
+      <div class="row">
+        <div class="col s4" data-sr="move 50px, enter left">
+          <img src="http://placehold.it/500x500">
+        </div>
+        <div class="col s8" data-sr="move 50px, enter right">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
+          <blockquote>
+            This is an example quotation that uses the blockquote tag.
+          </blockquote>
+          <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="projects">
+  <section class="home-projects">
     <div class="container">
       <h2 class="center-align">My Projects</h2>
       <div class="row">
-        <div class="col s12 m6">
+        <div class="col s12 m6" data-sr="scale up 40%, enter top, move 50px">
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="http://placehold.it/500x250">
+              <img class="activator" src="{% static 'img/sites/joe2go.png' %}">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6" data-sr="scale up 40%, enter right, ease 200px, over 1.5s, spin 180deg, reset">
+          <div class="card" data-sr>
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{% static 'img/sites/reallife.png' %}">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6" data-sr="enter left, move 50px, reset">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{% static 'img/sites/travelblogwave.png' %}">
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
@@ -41,47 +78,20 @@
           </div>
         </div>
         <div class="col s12 m6">
-          <div class="card">
+          <div class="card" data-sr="enter right, move 50px, over 1.5s">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="http://placehold.it/500x250">
+              <img class="activator" src="{% static 'img/sites/rentversity.png' %}">
             </div>
             <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
+              <span class="card-title activator grey-text text-darken-4">Rentversity<i class="material-icons right">more_vert</i></span>
+              <p><a href="https://rentversity.herokuapp.com">Visit Rentversity</a></p>
             </div>
             <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <span class="card-title grey-text text-darken-4">Rentversity<i class="material-icons right">close</i></span>
               <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="http://placehold.it/500x250">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="http://placehold.it/500x250">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              <span class="chip">Django</span>
+              <span class="chip">Google Maps</span>
+              <span class="chip">Scraping</span>
             </div>
           </div>
         </div>
@@ -93,7 +103,10 @@
   </section>
 
   {% block js %}
+    <script src="{% static 'js/scrollReveal.min.js' %}"></script>
+
     <script>
+      window.sr = new scrollReveal();
       $(document).ready(function(){
         $('.parallax').parallax();
       });
