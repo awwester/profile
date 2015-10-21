@@ -8344,4 +8344,9 @@ img {
   width: 100%;
   height: auto; }
 
+.social-links a {
+  color: inherit; }
+  .social-links a:hover {
+    color: #e6e6e6; }
+
 /*# sourceMappingURL=style.css.map */
