@@ -21,8 +21,8 @@
       <div class="container">
         <h2 class="center-align">About Me</h2>
         <div class="row">
-          <div class="col s4">
-            <img class="materialboxed circle" src="http://placehold.it/500x500">
+          <div class="col s4" data-sr="flip 360deg">
+            <img class="materialboxed circle" src="{% static 'img/adam.jpg' %}">
           </div>
           <div class="col s8">
             <ul class="collapsible popout" data-collapsible="accordion">
@@ -40,6 +40,10 @@
               </li>
               <li>
                 <div class="collapsible-header"><i class="material-icons">whatshot</i>Development</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">grade</i>Specialty</div>
                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
               </li>
             </ul>
@@ -152,27 +156,29 @@
       </div>
     </section>
 
-    <footer class="page-footer white-text">
+    <footer class="page-footer white-text home__footer">
       <div class="container">
         <div class="row">
           <div class="col m6 center-align">
-            <h5>Made with love using...</h5>
+            <h5>Made from scratch (with love) using...</h5>
             <span class="chip">Materialize</span>
             <span class="chip">Django</span>
             <span class="chip">JQuery</span>
             <span class="chip">Scroll Reveal JS</span>
+            <span class="chip">Particles JS</span>
           </div>
-          <div class="col m6 center-align">
-            <h5>Connect with me, I don't bite!</h5>
+          <div class="col m6 connect">
+            <h5 style="margin-bottom: 1px;">Connect with me, I don't bite<sub><small>1</small></sub></h5>
+            <p class="fine-print">1. Terms & Conditions apply</p>
             <div class="social-links">
               <a href="https://www.twitter.com/awwester">
                 <i class="fa fa-2x fa-twitter" data-sr="move 150px, enter left, over 4s"></i>
               </a>
-              <a href="https://www.linkedin.com/profile/view?id=AAIAAAJXMg8B5ThzH_LCi7clf20KuONnxNGNj5w">
-                <i class="fa fa-2x fa-border fa-linkedin"></i>
-              </a>
               <a href="https://www.github.com/awwester">
                 <i class="fa fa-2x fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/profile/view?id=AAIAAAJXMg8B5ThzH_LCi7clf20KuONnxNGNj5w">
+                <i class="fa fa-2x fa-border fa-linkedin hover-rotate"></i>
               </a>
               <a href="http://stackoverflow.com/users/2548934/awwester">
                 <i class="fa fa-2x fa-stack-overflow"></i>

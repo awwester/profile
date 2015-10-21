@@ -4,3 +4,11 @@ img {
   width: 100%;
   height: auto;
 }
+
+.hover-rotate {
+  transition: transform 1s ease;
+
+  &:hover {
+    transform: rotate(45deg);
+  }
+}

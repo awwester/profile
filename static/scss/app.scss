@@ -36,6 +36,10 @@
     }
   }
 
+  .show-container {
+      i { padding: 15px;}
+  }
+
   .projects {
     background: $gray;
   }
@@ -48,6 +52,18 @@
 
       &:hover { color: darken(#fff, 10%);}
     }
+  }
+}
+
+.home__footer {
+  .connect {
+    text-align: center;
+
+    h5 {
+      margin-bottom: 0;
+    }
+
+    .fine-print { font-size: 0.5em;}
   }
 }
 
