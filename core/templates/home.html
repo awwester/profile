@@ -3,8 +3,17 @@
 
 {% block body %}
   <div class="home">
-    <section class="header">
+    <section class="header valign-wrapper">
       <div id="particles-js"></div>
+      <div class="overlay">
+        <h2>Let's build something, together</h2>
+        <div class="show-container">
+          <i class="fa fa-pencil fa-3x" data-sr="spin 360deg, enter left, ease-in-out 200px, wait 0.5s, over 1s"></i>
+          <i class="fa fa-bolt fa-3x" data-sr="flip 90deg, enter top, move 50px, wait 1s"></i>
+          <i class="fa fa-coffee fa-3x" data-sr="flip 360deg, enter bottom, move 30px, wait 1.5s"></i>
+          <i class="fa fa-group fa-3x" data-sr="roll 45deg, enter right, move 200px, wait 2s"></i>
+        </div>
+      </div>
       <img src="{% static 'img/clouds.jpeg' %}">
     </section>
 

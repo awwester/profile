@@ -4,16 +4,13 @@
 @import "global";
 
 
-.social-links {
-  a {
-    color: inherit;
-    padding-left: 15px;
-    padding-right: 15px;
+/*
+  1. Home
+  2. Blog home
+  3. Blog Article
+*/
 
-    &:hover { color: darken(#fff, 10%);}
-  }
-}
-
+//***** 1. HOME PAGE *****/
 .home {
   section {
     padding-top: 20px;
@@ -21,12 +18,45 @@
   }
 
   .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     padding-top: 0;
     padding-bottom: 0;
     position: relative;
+
+    .overlay {
+      z-index: 2;
+      width: 100%;
+      color: white;
+      position: absolute;
+      bottom: 50%;
+      text-align: center;
+    }
   }
 
   .projects {
     background: $gray;
   }
+
+  .social-links {
+    a {
+      color: inherit;
+      padding-left: 15px;
+      padding-right: 15px;
+
+      &:hover { color: darken(#fff, 10%);}
+    }
+  }
+}
+
+//***** 2. BLOG HOME *****/
+.blog-home {
+
+}
+
+//***** 3. BLOG ARTICLE *****/
+.blog-article {
+
 }
