@@ -3,16 +3,16 @@
 
 {% block body %}
   <div class="blog">
-    <div class="row full-height">
-      <nav class="col m2 hide-on-small-only">
-        <p>Hello</p>
-      </nav>
+    <nav class="hide-on-small-only">
+      <p>Hello</p>
+    </nav>
 
+    <div class="row blog__body">
       {% block blog_body %}{% endblock %}
-
-      <aside class="col m2">
-        <p>Something will go here.</p>
-      </aside>
     </div>
+
+    <!-- <aside class="col m2 offset-m10">
+      <p>Something will go here.</p>
+    </aside> -->
   </div>
 {% endblock %}

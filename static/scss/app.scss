@@ -66,37 +66,49 @@
   }
 }
 
+
 //***** 2. BLOG *****/
+
+.blog__body {
+    width: 70%;
+    margin-left: 15%;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
 .blog {
   @extend .full-height;
 
   nav {
     @extend .full-height;
 
+    width: 15%;
+    overflow: hidden;
+    position: fixed;
     color: white;
     background: $brand-dark;
   }
 
-  aside {
-    @extend .full-height;
-    overflow: hidden;
-    display: relative;
-
-    background-color: $brand-light;
-    border-left: 1px solid darken($brand-light, 2%);
-  }
+  // aside {
+  //   @extend .full-height;
+  //
+  //   position:fixed;
+  //   // overflow: hidden;
+  //   right: 0;
+  //
+  //   background-color: red;
+  //   border-left: 1px solid darken($brand-light, 2%);
+  // }
 }
 
 .blog__home {
-  @extend .full-height;
-
   .chip-row {
     margin-top: 5px;
     margin-bottom: 5px;
   }
 
   .card-image {
-    // setting overflow hidden allows us to zoom
+    // overflow hidden allows us to zoom the img
     overflow: hidden;
 
     img {
@@ -111,8 +123,6 @@
 }
 
 .blog__article {
-  @extend .full-height;
-
   article {
     overflow: scroll;
   }
