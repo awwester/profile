@@ -6,8 +6,7 @@
 
 /*
   1. Home
-  2. Blog home
-  3. Blog Article
+  2. Blog
 */
 
 //***** 1. HOME PAGE *****/
@@ -67,8 +66,30 @@
   }
 }
 
-//***** 2. BLOG HOME *****/
-.blog-home {
+//***** 2. BLOG *****/
+.blog {
+  @extend .full-height;
+
+  nav {
+    @extend .full-height;
+
+    color: white;
+    background: $brand-dark;
+  }
+
+  aside {
+    @extend .full-height;
+    overflow: hidden;
+    display: relative;
+
+    background-color: $brand-light;
+    border-left: 1px solid darken($brand-light, 2%);
+  }
+}
+
+.blog__home {
+  @extend .full-height;
+
   .chip-row {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -89,32 +110,10 @@
   }
 }
 
-//***** 3. BLOG ARTICLE *****/
-.blog-article {
-  height: 100%;
-
-  > { overflow: hidden; }
-
-  nav {
-    // @extend .full-height;
-    overflow: hidden;
-    display: fixed;
-    height:100%;
-
-    color: white;
-    background: $brand-dark;
-  }
+.blog__article {
+  @extend .full-height;
 
   article {
     overflow: scroll;
-  }
-
-  aside {
-    @extend .full-height;
-    overflow: hidden;
-    display: relative;
-
-    background-color: $brand-light;
-    border-left: 1px solid darken($brand-light, 2%);
   }
 }

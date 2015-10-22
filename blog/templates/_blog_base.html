@@ -2,26 +2,17 @@
 {% load staticfiles %}
 
 {% block body %}
-  <nav>
-    <div class="nav-wrapper container">
-      <div class="hide-on-small-only">
-        {% include "shared/social_links.html" %}
-      </div>
-      <a href="#" data-activates="mobile-demo" class="button-collapse">
-        <i class="material-icons">menu</i>
-      </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="active"><a href="{% url 'blog-home' %}">About</a></li>
-        <li><a href="#">Kittens</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="active"><a href="{% url 'blog-home' %}">Blog</a></li>
-        <li><a href="#">Kittens</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="blog">
+    <div class="row full-height">
+      <nav class="col m2 hide-on-small-only">
+        <p>Hello</p>
+      </nav>
 
-  {% block blog_body %}{% endblock %}
+      {% block blog_body %}{% endblock %}
+
+      <aside class="col m2">
+        <p>Something will go here.</p>
+      </aside>
+    </div>
+  </div>
 {% endblock %}
