@@ -40,7 +40,7 @@
       i { padding: 15px;}
   }
 
-  .projects { background: $gray; }
+  .projects { background: $brand-light; }
 
   .social-links {
     li { display: inline; }
@@ -91,5 +91,30 @@
 
 //***** 3. BLOG ARTICLE *****/
 .blog-article {
+  height: 100%;
 
+  > { overflow: hidden; }
+
+  nav {
+    // @extend .full-height;
+    overflow: hidden;
+    display: fixed;
+    height:100%;
+
+    color: white;
+    background: $brand-dark;
+  }
+
+  article {
+    overflow: scroll;
+  }
+
+  aside {
+    @extend .full-height;
+    overflow: hidden;
+    display: relative;
+
+    background-color: $brand-light;
+    border-left: 1px solid darken($brand-light, 2%);
+  }
 }
