@@ -19,3 +19,14 @@ img {
     transform: rotate(45deg);
   }
 }
+
+// vertical navbar
+nav.vertical {
+  ul > li {
+    float: none;
+
+    a {
+      padding-left: 3em;
+    }
+  }
+}

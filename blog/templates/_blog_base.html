@@ -3,8 +3,13 @@
 
 {% block body %}
   <div class="blog">
-    <nav class="hide-on-small-only">
-      <p>Hello</p>
+    <nav class="hide-on-small-only vertical">
+      <img src="{% static 'img/adam_logo.png' %}" class="logo circle wave wave-effect">
+      <ul>
+        <li><a href="{% url 'home' %}"><i class="material-icons">account_circle</i> Who Am I?</a></li>
+        <li><a href="{% url 'blog-home' %}"><i class="material-icons">description</i> Articles</a></li>
+        <li class="hover-remove"><a href="#"><i class="material-icons">thumb_up</i> Kittens!</a></li>
+      </ul>
     </nav>
 
     <div class="row blog__body">

@@ -88,6 +88,17 @@
     color: white;
     background: $brand-dark;
   }
+
+  .logo {
+    padding: 2em;
+    transition: all ease 0.5s;
+
+    &:hover {
+      background: blue;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+    }
+  }
 }
 
 .blog__home {
