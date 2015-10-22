@@ -1,9 +1,39 @@
 {% extends "_blog_base.html" %}
 
-{% block body %}
-  {% for article in article_list %}
-    <p>
-      <a href="{{ article.get_absolute_url }}">{{article.title}}</a>
-    </p>
-  {% endfor %}
+{% block blog_body %}
+  <div class="blog-home container">
+    {% for article in article_list %}
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <a href="{{article.get_absolute_url}}">
+                <img src="http://lorempixel.com/800/300/nature/" class="shrink">
+                <span class="card-title">{{article.title}}</span>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>{{article.headline}}</p>
+              <div class="chip-row">
+                {% for tag in article.tags.all %}
+                  <span class="chip">{{tag.title}}</span>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="card-action">
+              <a href="{{article.get_absolute_url}}">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script>
+    $(document).ready(function(){
+      $(".button-collapse").sideNav();
+    });
+  </script>
 {% endblock %}

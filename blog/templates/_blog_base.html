@@ -1,1 +1,27 @@
 {% extends "_base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+  <nav>
+    <div class="nav-wrapper container">
+      <div class="hide-on-small-only">
+        {% include "shared/social_links.html" %}
+      </div>
+      <a href="#" data-activates="mobile-demo" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="active"><a href="{% url 'blog-home' %}">About</a></li>
+        <li><a href="#">Kittens</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="active"><a href="{% url 'blog-home' %}">Blog</a></li>
+        <li><a href="#">Kittens</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  {% block blog_body %}{% endblock %}
+{% endblock %}
