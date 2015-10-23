@@ -5,6 +5,8 @@
     <h3>{{article.title}}</h3>
     <p><b>{{article.headline}}</b></p>
     <p>{{article.body|safe}}</p>
-    <a href="{% url 'blog-home' %}">Blog Home</a>
+    <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
+      <i class="material-icons left" >arrow_back</i>Blog Home
+    </a>
   </article>
 {% endblock %}

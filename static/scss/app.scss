@@ -17,6 +17,11 @@
     padding-bottom: 20px;
   }
 
+  .section-header {
+    text-align: center;
+    font-weight: 200;
+  }
+
   .header {
     display: flex;
     align-items: center;
@@ -36,15 +41,22 @@
     }
   }
 
-  .about {
-    background: url("../img/textures/light.png") repeat;
-  }
+  .about { background: url("../img/textures/light.png") repeat; }
 
   .show-container {
     i { padding: 15px;}
   }
 
   .projects { @extend .dark-bg; }
+
+  .blog {
+    background: url("../img/textures/light.png") repeat;
+
+    .blog-headline {
+      text-align: center;
+      font-size: 3em;
+    }
+  }
 
   .social-links {
     li { display: inline; }

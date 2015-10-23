@@ -6,7 +6,7 @@
     <section class="header valign-wrapper">
       <div id="particles-js"></div>
       <div class="overlay">
-        <h2>Let's build something, together</h2>
+        <h2 class="skinny">Let's build something, together</h2>
         <div class="show-container">
           <i class="fa fa-pencil fa-3x" data-sr="spin 360deg, enter left, ease-in-out 200px, wait 0.5s, over 1s"></i>
           <i class="fa fa-bolt fa-3x" data-sr="flip 90deg, enter top, move 50px, wait 1s"></i>
@@ -19,7 +19,7 @@
 
     <section class="about" data-sr="move 50px, enter top">
       <div class="container">
-        <h2 class="center-align">About Me</h2>
+        <h2 class="section-header">About Me</h2>
         <div class="row">
           <div class="col s4" data-sr="flip 360deg">
             <img class="circle z-depth-5" src="{% static 'img/adam.jpg' %}">
@@ -55,7 +55,7 @@
 
     <section class="projects">
       <div class="container">
-        <h2 class="center-align">My Projects</h2>
+        <h2 class="section-header">My Projects</h2>
         <div class="row">
           <div class="col s12 m6" data-sr="scale up 40%, enter top, move 50px">
             <div class="card z-depth-3">
@@ -124,9 +124,53 @@
       </div>
     </section>
 
+    <section class="blog">
+      <h2 class="section-header">My Tech Blog</h2>
+      <h4 class="blog-headline">
+        <p data-sr="enter left, wait 0.5s">
+          {{article_count}} articles about...
+        </p>
+        <p data-sr="enter left, wait 1.5s">
+          {% for tag in tag_list %}
+            {{tag}}
+            {% if not forloop.last %},{% endif %}
+          {% endfor %}
+        </p>
+      </h4>
+      <div class="container">
+        <div class="row">
+          {% for article in article_list %}
+            <div class="col m6">
+              <div class="card medium">
+                <div class="card-image">
+                  <a href="{{article.get_absolute_url}}">
+                    <img src="/static/img/fake_article{{forloop.counter}}.png">
+                    <span class="card-title">{{article.title}}</span>
+                  </a>
+                </div>
+                <div class="card-content">
+                  <p>{{article.headline}}</p>
+                </div>
+                <div class="card-action">
+                  <a href="{{article.get_absolute_url}}">Read More...</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="row">
+          <div class="right">
+            <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
+              <i class="material-icons right" >arrow_forward</i>View All
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="contact">
       <div class="container">
-        <h2 class="center-align">Contact Me</h2>
+        <h2 class="section-header">Contact Me</h2>
         <div class="row">
           <form class="col s12">
             <div class="row">
