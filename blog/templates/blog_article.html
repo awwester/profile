@@ -1,10 +1,32 @@
 {% extends "_blog_base.html" %}
 
 {% block blog_body %}
-  <article class="col m12 blog__article">
+  <article class="col m9 blog__article">
     <h3>{{article.title}}</h3>
     <p><b>{{article.headline}}</b></p>
     <p>{{article.body|safe}}</p>
     <a href="{% url 'blog-home' %}">Blog Home</a>
   </article>
+
+  <div class="col hide-on-small-only m3 l2">
+    <ul class="section table-of-contents">
+    </ul>
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script>
+    $(document).ready(function(){
+      $('.table-of-contents .row').pushpin({
+        top: $('.table-of-contents').offset().top }
+      );
+      $('.scrollspy').scrollSpy();
+
+      // create the table of contents
+      $(".scrollspy").each(function( index ) {
+        var id = $( this ).attr('id');
+        $(".table-of-contents").append("<li><a href='#" + id + "'>" + id  + "</a></li>");
+      });
+    });
+  </script>
 {% endblock %}

@@ -69,13 +69,6 @@
 
 //***** 2. BLOG *****/
 
-.blog__body {
-    width: 70%;
-    margin-left: 15%;
-    padding-left: 4em;
-    padding-right: 4em;
-}
-
 .blog {
   @extend .full-height;
 
@@ -89,6 +82,8 @@
     background: $brand-dark;
   }
 
+  .table-of-contents { position: fixed; }
+
   .logo {
     padding: 2em;
     transition: all ease 0.5s;
@@ -99,6 +94,13 @@
               filter: grayscale(100%);
     }
   }
+}
+
+.blog__body {
+    width: 85%;
+    margin-left: 15%;
+    padding-left: 4em;
+    padding-right: 4em;
 }
 
 .blog__home {
@@ -123,7 +125,5 @@
 }
 
 .blog__article {
-  article {
-    overflow: scroll;
-  }
+  article { overflow: scroll; }
 }
