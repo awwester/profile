@@ -24,9 +24,8 @@ img {
 nav.vertical {
   ul > li {
     float: none;
+    display: block;
 
-    a {
-      padding-left: 3em;
-    }
+    a { padding-left: 3em; }
   }
 }

@@ -4,8 +4,6 @@ $(document).ready(function(){
   // ===== GLOBAL ===== //
   $(".hover-remove").mouseover(function(){
     $(this).addClass("hide");
-
-    console.log('triggering..');
-    Materialize.toast('Gotcha!! :D', 4000); // 4000 is the duration of the toast
+    Materialize.toast('Gotcha!! :D', 5000);
   });
 });
