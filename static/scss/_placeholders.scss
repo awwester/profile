@@ -1,0 +1,10 @@
+
+.dark-bg {
+  background: url("../img/textures/dark.png") repeat;
+  color: white;
+}
+
+.light-bg {
+  background: $brand-light;
+  color: black;
+}

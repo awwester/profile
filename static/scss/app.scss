@@ -1,4 +1,5 @@
 @import "variables";
+@import "placeholders";
 @import "materialize";
 @import "particles";
 @import "global";
@@ -35,11 +36,15 @@
     }
   }
 
-  .show-container {
-      i { padding: 15px;}
+  .about {
+    background: url("../img/textures/light.png") repeat;
   }
 
-  .projects { background: $brand-light; }
+  .show-container {
+    i { padding: 15px;}
+  }
+
+  .projects { @extend .dark-bg; }
 
   .social-links {
     li { display: inline; }
@@ -55,12 +60,16 @@
 }
 
 .home__footer {
+  background: url("../img/textures/dark.png") repeat;
+
+  .social-links {
+    i:hover { color: $brand-bright; }
+  }
+
   .connect {
     text-align: center;
 
-    h5 {
-      margin-bottom: 0;
-    }
+    h5 { margin-bottom: 0; }
 
     .footnote { font-size: 0.5em;}
   }
@@ -69,10 +78,14 @@
 
 //***** 2. BLOG *****/
 .blog__body {
-    width: 70%;
-    margin-left: 15%;
-    padding-left: 4em;
-    padding-right: 4em;
+  width: 85%;
+  margin-left: 15%;
+  padding-left: 4em;
+  padding-right: 4em;
+
+  article {
+
+  }
 }
 
 .blog {
@@ -86,7 +99,7 @@
     overflow: hidden;
     position: fixed;
     color: white;
-    background: $brand-dark;
+    background: url("../img/textures/dark.png") repeat;
 
     i {font-size: 1rem;}
 
@@ -94,6 +107,8 @@
       a {transition: all ease 0.5s;}
 
       &:hover {
+        background: rgba(0,0,0,0.15);
+
         a {
           font-size: 1.2rem;
         }
@@ -140,11 +155,5 @@
         transform:scale(1);
       }
     }
-  }
-}
-
-.blog__article {
-  article {
-    overflow: scroll;
   }
 }
