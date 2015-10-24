@@ -6,7 +6,7 @@
     <section class="header valign-wrapper">
       <div id="particles-js"></div>
       <div class="overlay">
-        <h2 class="skinny">Let's build something, together</h2>
+        <h2 class="skinny">Let's build something<span data-sr="enter right, move 30px, wait 2.2s">, together</span></h2>
         <div class="show-container">
           <i class="fa fa-pencil fa-3x" data-sr="spin 360deg, enter left, ease-in-out 200px, wait 0.5s, over 1s"></i>
           <i class="fa fa-bolt fa-3x" data-sr="flip 90deg, enter top, move 50px, wait 1s"></i>
@@ -29,22 +29,31 @@
               <li class="active">
                 <div class="collapsible-header active"><i class="material-icons">person</i>Life</div>
                 <div class="collapsible-body">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
+                  <p>Originally from the United States, I'm currently based in Colombia in the heart of the coffee region. When I'm not developing I enjoy watching soccer, playing soccer, and just enjoying a simple life doing what I truly love to do in a wonderful place.</p>
                 </div>
               </li>
               <li>
                 <div class="collapsible-header"><i class="material-icons">place</i>Travel</div>
                 <div class="collapsible-body">
-                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
+                  <p>A few years ago, I was working the United States in a small town in Washington state called Richland. My life was too easy and I hit a rut. I had accomplished everything I could there and decided to get rid of all my things, rent my house, and explore the world. For more info on that, if you wish you can check out my travel blog, <a href="http://travelblogwave.com/stepsofatraveler">Steps of a Traveler</a>, which I made as part of my <a href="http://www.travelblogwave.com">Travel Blog Wave</a> project.</p>
                 </div>
               </li>
               <li>
-                <div class="collapsible-header"><i class="material-icons">whatshot</i>Development</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                <div class="collapsible-header">
+                  <i class="material-icons">whatshot</i>Development
+                    <a href="#" class="btn right"><i class="material-icons right">arrow_forward</i>Read More</a>
+                  </div>
+                <div class="collapsible-body">
+                  <p>At my job in the U.S. I mostly did analysis, database development, and business process management. After 5 years of telling my managers that I wanted to get more into development work, I took matters into my own hands. After being confined to the Microsoft universe, I quickly found out the power of the open source world. It was like opening your eyes to a whole new world.</p>
+                </div>
               </li>
               <li>
                 <div class="collapsible-header"><i class="material-icons">grade</i>Specialty</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                <div class="collapsible-body">
+                <p>There are so many developers out there, you might be wondering what makes me special? Coming from a business background, I get it. I understand both sides.<br><br>
+                  <a href="#" data-sr="enter right, wait 2s">Want to know more?</a>
+                </p>
+                </div>
               </li>
             </ul>
 
@@ -159,7 +168,7 @@
           {% endfor %}
         </div>
         <div class="row">
-          <div class="right">
+          <div class="right push-right">
             <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
               <i class="material-icons right" >arrow_forward</i>View All
             </a>

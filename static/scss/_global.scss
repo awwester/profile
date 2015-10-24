@@ -1,4 +1,10 @@
-// global styles
+/*
+  1. General
+  2. Hover
+  3. Vertical Navbar
+*/
+
+// ===== 1. GENERAL ===== //
 
 body, html { height: 100%; }
 
@@ -14,15 +20,28 @@ img {
   min-height: 100%;
 }
 
-.hover-rotate {
-  transition: transform 1s ease;
+// ===== 2. Hover ===== //
+$translate-distance: 1em;
 
-  &:hover {
-    transform: rotate(45deg);
-  }
+@mixin hover-transform($transform) {
+  transition: transform 0.3s ease;
+
+  &:hover { transform: ($transform); }
 }
 
-// vertical navbar
+.hover-rotate {
+  @include hover-transform(rotate(45deg));
+}
+
+.push-right {
+  @include hover-transform(translateX($translate-distance));
+}
+
+.push-left {
+  @include hover-transform(translateX(-$translate-distance));
+}
+
+// ===== 3. Vertical navbar ===== //
 nav.vertical {
   ul > li {
     float: none;
