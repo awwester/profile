@@ -29,7 +29,7 @@ $translate-distance: 1em;
   &:hover { transform: ($transform); }
 }
 
-.hover-rotate {
+.rotate {
   @include hover-transform(rotate(45deg));
 }
 
@@ -39,6 +39,10 @@ $translate-distance: 1em;
 
 .push-left {
   @include hover-transform(translateX(-$translate-distance));
+}
+
+.grow {
+  @include hover-transform(scale(1.3));
 }
 
 // ===== 3. Vertical navbar ===== //

@@ -103,6 +103,20 @@
       padding: $card-padding;
     }
 
+    &.shrink {
+      // overflow hidden allows us to zoom the img
+      overflow: hidden;
+
+      img {
+        transition: transform ease 0.5s;
+        transform:scale(1.05);
+
+        &:hover {
+          transform:scale(1);
+        }
+      }
+    }
+
   }
 
   .card-content {
@@ -134,6 +148,7 @@
   }
 
   .card-reveal {
+    color: black;
     padding: $card-padding;
     position: absolute;
     background-color: $card-bg-color;

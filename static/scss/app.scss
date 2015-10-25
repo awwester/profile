@@ -49,7 +49,9 @@
     i { padding: 15px;}
   }
 
-  .projects { @extend .dark-bg; }
+  .projects {
+    @extend .dark-bg;
+  }
 
   .blog {
     background: url("../img/textures/light.png") repeat;
@@ -174,19 +176,5 @@
   .chip-row {
     margin-top: 5px;
     margin-bottom: 5px;
-  }
-
-  .card-image {
-    // overflow hidden allows us to zoom the img
-    overflow: hidden;
-
-    img {
-      transition: all ease 0.5s;
-      transform:scale(1.5);
-
-      &:hover {
-        transform:scale(1);
-      }
-    }
   }
 }
