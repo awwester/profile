@@ -181,7 +181,7 @@
       <div class="container">
         <h2 class="section-header">Contact Me</h2>
         <div class="row">
-          <form class="col s12">
+          <form id="contact-form" class="col s12">
             <div class="row">
               <div class="input-field col m4 s12">
                 <i class="material-icons prefix">email</i>
@@ -189,19 +189,34 @@
                 <label for="email">Email</label>
               </div>
               <div class="input-field col m4 s12">
-                <input id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
+                <input id="first-name" type="text" class="validate">
+                <label for="first-name">First Name</label>
               </div>
               <div class="input-field col m4 s12">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
+                <input id="last-name" type="text" class="validate">
+                <label for="last-name">Last Name</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">message</i>
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <textarea id="message" class="materialize-textarea"></textarea>
                 <label for="textarea1">So, what are you thinking?</label>
+              </div>
+            </div>
+            <div class="row">
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <p id="submit-label" class="hide"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <span data-sr="enter left, wait 4s">Or... you can always tweet <a href="https://twitter.com/awwester">@awwester</a></span>
+                <a href="#contact" class="btn-large right waves-effect waves-light" onclick="sendMail()">Send
+                  <i class="material-icons right">send</i>
+                </a>
               </div>
             </div>
           </form>
@@ -243,6 +258,51 @@
   <script>
     // initialize scroll reveal
     window.sr = new scrollReveal();
+
+    function sendMail(){
+      // send a contact email
+      var emailElem = $('#email');
+      var firstNameElem = $('#first-name');
+      var lastNameElem = $('#last-name');
+      var messageElem = $('#message');
+      var submitLabelElem = $('#submit-label');
+      var formElem = $('#contact-form');
+
+      var email = emailElem.val();
+      var firstName = firstNameElem.val();
+      var lastName = lastNameElem.val();
+      var message = messageElem.val();
+
+      if(email && firstName && message){
+        // all fields are filled out, send post request to server
+        $.post("{% url 'contact' %}", {
+          'email': email,
+          'first_name': firstName,
+          'last_name': lastName,
+          'message': message,
+        }).then(function(){
+          var successText = "Your message has been sent successfully!";
+          formElem.trigger("reset");
+          submitLabelElem.text(successText);
+          submitLabelElem.removeClass('hide error').addClass('success');
+        }, function(){
+          var errorText = "There was an error sending your mail, try again later?";
+          submitLabelElem.text(errorText);
+          submitLabelElem.removeClass('hide success').addClass('error');
+        });
+      } else {
+        // not all the required fields were filled out
+        if(!firstName){
+          firstNameElem.addClass('invalid');
+        }
+        if(!email){
+          emailElem.addClass('invalid');
+        }
+        if(!message){
+          messageElem.addClass('invalid');
+        }
+      }
+    }
 
     $(document).ready(function(){
       $('.parallax').parallax();
