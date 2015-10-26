@@ -16,6 +16,7 @@ class Article(models.Model):
     created = models.DateField(auto_now_add=True)
     body = models.TextField()
     tags = models.ManyToManyField(Tag)
+    public = models.BooleanField(default=True)
 
     def get_absolute_url(self):
         return reverse('blog-article', kwargs={'pk': self.id})

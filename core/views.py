@@ -12,8 +12,8 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['tag_list'] = Tag.objects.all()
-        context['article_count'] = Article.objects.count()
-        context['article_list'] = Article.objects.all()[:2]
+        context['article_count'] = Article.objects.filter(public=True).count()
+        context['article_list'] = Article.objects.filter(public=True)[:2]
 
         return context
 

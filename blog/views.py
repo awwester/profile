@@ -6,8 +6,8 @@ from .models import Article
 
 
 class BlogHomeView(ListView):
-    model = Article
     template_name = "blog_home.html"
+    queryset = Article.objects.filter(public=True)
 
 
 class BlogArticleView(DetailView):
