@@ -3,26 +3,35 @@
 
 {% block body %}
   <div class="blog">
-    <nav class="hide-on-small-only vertical">
-
-      <div class="logo">
+    <nav class="blog__nav">
+      <div class="logo hide-on-med-and-down">
         <img class="bottom" src="{% static 'img/adam.jpg' %}" />
         <img class="top" src="{% static 'img/adam_logo.png' %}" />
       </div>
-      <!-- <div class="logo">
-        <img  class="top circle wave wave-effect">
-        <img  class="bottom circle wave wave-effect">
-      </div> -->
 
-      <ul>
-        <li class="waves-effect waves-dark"><a href="{% url 'home' %}"><i class="material-icons">account_circle</i> Who Am I?</a></li>
-        <li class="waves-effect waves-light"><a href="{% url 'blog-home' %}"><i class="material-icons">description</i> Articles</a></li>
-        <li class="hover-remove"><a href="#"><i class="material-icons">thumb_up</i> Kittens!</a></li>
+      <ul class="right hide-on-med-and-down">
+        {% include "shared/nav_items.html" %}
       </ul>
+      <ul id="slide-out" class="side-nav">
+        {% include "shared/nav_items.html" %}
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse">
+        <i class="mdi-navigation-menu"></i>
+      </a>
     </nav>
 
     <div class="row blog__body">
       {% block blog_body %}{% endblock %}
     </div>
   </div>
+{% endblock %}
+
+{% block js %}
+  {{block.super}}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // Initialize collapse button
+      $(".button-collapse").sideNav();
+    })
+  </script>
 {% endblock %}
