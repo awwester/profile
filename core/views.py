@@ -2,6 +2,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.views.decorators.csrf import csrf_exempt
 
 from blog.models import Article, Tag
 
@@ -18,6 +19,7 @@ class HomeView(TemplateView):
         return context
 
 
+@csrf_exempt
 def contact(request):
     "receive a contact AJAX request and try to send an email"
     if request.method == "POST":
