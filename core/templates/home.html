@@ -21,10 +21,10 @@
       <div class="container">
         <h2 class="section-header">About Me</h2>
         <div class="row">
-          <div class="col s4" data-sr="flip 360deg">
+          <div class="col m4 hide-on-small-only" data-sr="flip 360deg">
             <img class="circle z-depth-5" src="{% static 'img/adam.jpg' %}">
           </div>
-          <div class="col s8">
+          <div class="col m8 s12">
             <ul class="collapsible popout" data-collapsible="accordion">
               <li class="active">
                 <div class="collapsible-header active"><i class="material-icons">person</i>Life</div>
@@ -231,7 +231,7 @@
             </div>
             <div class="row">
               <div class="col s12">
-                <span data-sr="enter left, wait 4s"><i class="fa fa-twitter shake"></i> Or... you can always tweet <a href="https://twitter.com/awwester">@awwester</a></span>
+                <span class="hide-on-small-only" data-sr="enter left, wait 4s"><i class="fa fa-twitter shake"></i> Or... you can always tweet <a href="https://twitter.com/awwester">@awwester</a></span>
                 <a href="#contact" class="btn-large right waves-effect waves-light" onclick="sendMail()">Send
                   <i class="material-icons right">send</i>
                 </a>
