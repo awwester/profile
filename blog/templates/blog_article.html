@@ -17,16 +17,33 @@
     </a>
   </article>
   <aside class="hide-on-small-only">
-    <div id="subscribe-container">
-      <p class="center-align">Notify me on new articles</p>
-      <div class="input-field col s12">
-        <input id="email-input" type="email" class="validate">
-        <label for="email-input">Enter Email</label>
+    <div class="row">
+      <div id="subscribe-container">
+        <p class="center-align">Notify me on new articles</p>
+        <div class="input-field col s12">
+          <input id="email-input" type="email" class="validate">
+          <label for="email-input">Enter Email</label>
+        </div>
+        <div class="center-align">
+          <button class="btn" onclick="emailSignup()">
+            <i class="material-icons right">check</i>Sign Up
+          </button>
+        </div>
       </div>
-      <div class="center-align">
-        <button class="btn" onclick="emailSignup()">
-          <i class="material-icons right">check</i>Sign Up
-        </button>
+    </div>
+    <div class="row related-article">
+      <div class="m10 offset-m1">
+        <div class="card" data-sr="enter top, move 30px, wait 30s">
+          <div class="card-header">
+            {{related_article.title}}
+          </div>
+          <div class="card-content">
+            <p>{{related_article.headline}}</p>
+          </div>
+          <div class="card-action">
+            <a href="{{related_article.get_absolute_url}}">Read More</a>
+          </div>
+        </div>
       </div>
     </div>
     <p id="subscribe-message" class="hide">

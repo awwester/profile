@@ -13,3 +13,9 @@ class BlogHomeView(ListView):
 class BlogArticleView(DetailView):
     template_name = "blog_article.html"
     model = Article
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogArticleView, self).get_context_data(**kwargs)
+        context['related_article'] = self.get_object().get_related_article()
+
+        return context

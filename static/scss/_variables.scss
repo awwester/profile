@@ -8,6 +8,11 @@ $brand-dark: #333;
 $brand-gray: #eee;
 $brand-medium-gray: #777;
 
+$dark-texture: url("../img/textures/dark.png") repeat;
+$light-texture: url("../img/textures/light.png") repeat;
 
+// materialize overrides
 $primary-color: $brand;
 $secondary-color: $brand-alt;
+
+$card-link-color: $brand-alt;

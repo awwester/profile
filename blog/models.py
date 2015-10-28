@@ -24,5 +24,10 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse('blog-article', kwargs={'pk': self.id})
 
+    def get_related_article(self):
+        potential_articles = Article.objects.exclude(id=self.id)
+
+        return potential_articles.order_by('?').first()
+
     def __str__(self):
         return self.title

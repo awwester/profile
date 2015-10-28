@@ -45,7 +45,7 @@
     }
   }
 
-  .about { background: url("../img/textures/light.png") repeat; }
+  .about { background: $light-texture; }
 
   .show-container {
     i { padding: 15px;}
@@ -56,7 +56,7 @@
   }
 
   .blog {
-    background: url("../img/textures/light.png") repeat;
+    background: $light-texture;
 
     .blog-headline {
       text-align: center;
@@ -103,7 +103,7 @@
 }
 
 .home__footer {
-  background: url("../img/textures/dark.png") repeat;
+  background: $dark-texture;
 
   .social-links {
     i:hover { color: $brand-bright; }
@@ -182,6 +182,21 @@
       padding: 2px;
       text-align: center;
     }
+
+    .related-article {
+      position: fixed;
+      bottom: 0;
+
+      .card-header {
+        padding: 10px;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 200;
+        background: $dark-texture;
+        color: white;
+      }
+
+    }
   }
 }
 
@@ -217,7 +232,7 @@
     overflow: hidden;
     position: fixed;
     color: white;
-    background: url("../img/textures/dark.png") repeat;
+    background: $dark-texture;
 
     i {font-size: 1rem;}
 
