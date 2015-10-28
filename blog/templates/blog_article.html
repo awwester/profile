@@ -2,15 +2,15 @@
 {% load staticfiles %}
 
 {% block blog_body %}
-  <article class="col s12 m8" data-sr>
-    <h1 class="center-align">{{article.title}}</h1>
-    <p class="headline">{{article.headline}}</p>
-    <div class="divider"></div>
-    <p>{{article.body|safe}}</p>
-    <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
-      <i class="material-icons left" >arrow_back</i>Blog Home
-    </a>
-  </article>
+    <article class="col s12 m8">
+      <h1 class="center-align" data-sr="enter right, move 30px">{{article.title}}</h1>
+      <p class="headline" data-sr="enter right, wait 0.3s, hustle 30px">{{article.headline}}</p>
+      <div class="divider"></div>
+      <p>{{article.body|safe}}</p>
+      <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
+        <i class="material-icons left" >arrow_back</i>Blog Home
+      </a>
+    </article>
 {% endblock %}
 
 {% block js %}
