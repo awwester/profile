@@ -127,6 +127,12 @@
   padding-right: 4em;
 
   article {
+    h1, h2, h3 { font-weight: 300; }
+
+    .headline {
+      color: $brand-medium-gray;
+      font-style: italic;
+    }
 
   }
 }
