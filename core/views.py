@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 
 from blog.models import Article, Tag
+from .models import EmailSubscribe
 
 
 class HomeView(TemplateView):
@@ -35,3 +36,17 @@ def contact(request):
             return HttpResponse(status=400)
     else:
         return HttpResponse('this is only for AJAX Posts')
+
+
+@csrf_exempt
+def email_subscribe(request):
+    if request.method == "POST":
+        try:
+            subscribe = EmailSubscribe(email=request.POST["email"])
+            subscribe.save()
+            return HttpResponse()
+        except Exception as e:
+            print(e)
+            return HttpResponse(status=400)
+    else:
+        return HttpResponse(status=405)

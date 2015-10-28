@@ -2,20 +2,37 @@
 {% load staticfiles %}
 
 {% block blog_body %}
-    <article class="col s12 m8">
-      <h1 class="center-align" data-sr="enter top, move 50px">{{article.title}}</h1>
-      <blockquote data-sr="enter right, wait 0.3s, hustle 30px, over 2s">
-        <p>Written on {{article.created}} by Adam</p>
-        <p class="headline">{{article.headline}}</p>
-      </blockquote>
-      <div class="divider"></div>
-      <p>{{article.body|safe}}</p>
-      <div class="divider"></div>
-      <br>
-      <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
-        <i class="material-icons left" >arrow_back</i>Blog Home
-      </a>
-    </article>
+  <article class="col s12 m10">
+    <h1 class="center-align" data-sr="enter top, move 50px">{{article.title}}</h1>
+    <blockquote data-sr="enter right, wait 0.3s, hustle 30px, over 2s">
+      <p>Written on {{article.created}} by Adam</p>
+      <p class="headline">{{article.headline}}</p>
+    </blockquote>
+    <div class="divider"></div>
+    <p>{{article.body|safe}}</p>
+    <div class="divider"></div>
+    <br>
+    <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
+      <i class="material-icons left" >arrow_back</i>Blog Home
+    </a>
+  </article>
+  <aside class="hide-on-small-only">
+    <div id="subscribe-container">
+      <p class="center-align">Notify me on new articles</p>
+      <div class="input-field col s12">
+        <input id="email-input" type="email" class="validate">
+        <label for="email-input">Enter Email</label>
+      </div>
+      <div class="center-align">
+        <button class="btn" onclick="emailSignup()">
+          <i class="material-icons right">check</i>Sign Up
+        </button>
+      </div>
+    </div>
+    <p id="subscribe-message" class="hide">
+      You have been added!
+    </p>
+  </aside>
 {% endblock %}
 
 {% block js %}
@@ -23,6 +40,29 @@
   <script src="{% static 'js/highlight.pack.js' %}"></script>
   <script>
     hljs.initHighlightingOnLoad();
+
+    function emailSignup(){
+      var emailElem = $("#email-input");
+      var messageElem = $("#subscribe-message");
+      var email = emailElem.val();
+
+      if(email){
+        $.post("{% url 'email-subscribe' %}", {
+          'email': email
+        }).then(function(){
+          $("#subscribe-container").addClass('hide');
+
+          console.log('removing hide class from sub');
+          console.log($("#subscribe-message"))
+          $("#subscribe-message").removeClass('hide');
+          console.log($("#subscribe-message").hasClass("hide"));
+        }, function(){
+          console.log('there was an error on the server');
+        });
+      }else{
+        emailElem.addClass('invalid');
+      }
+    }
 
     $(document).ready(function(){
       window.sr = new scrollReveal();

@@ -167,6 +167,22 @@
       }
     }
   }
+
+  aside {
+    @extend .full-height;
+    width: 15%;
+    right: 0;
+    position: fixed;
+    background: $brand-light;
+    border-left: solid 1px darken($brand-light, 5%);
+
+    #subscribe-message {
+      background-color: $success-color;
+      color: $brand-light;
+      padding: 2px;
+      text-align: center;
+    }
+  }
 }
 
 .blog__nav {
