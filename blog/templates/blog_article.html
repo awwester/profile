@@ -33,7 +33,7 @@
     </div>
     <div class="row related-article">
       <div class="m10 offset-m1">
-        <div class="card" data-sr="enter top, move 30px, wait 30s">
+        <div class="card" data-sr="enter bottom, move 30px, wait 30s">
           <div class="card-header">
             {{related_article.title}}
           </div>
@@ -46,9 +46,6 @@
         </div>
       </div>
     </div>
-    <p id="subscribe-message" class="hide">
-      You have been added!
-    </p>
   </aside>
 {% endblock %}
 
@@ -68,11 +65,7 @@
           'email': email
         }).then(function(){
           $("#subscribe-container").addClass('hide');
-
-          console.log('removing hide class from sub');
-          console.log($("#subscribe-message"))
-          $("#subscribe-message").removeClass('hide');
-          console.log($("#subscribe-message").hasClass("hide"));
+           Materialize.toast('You have been added!', 5000)
         }, function(){
           console.log('there was an error on the server');
         });
