@@ -2,8 +2,8 @@
 {% load staticfiles %}
 
 {% block blog_body %}
-  <article class="col s12 m8">
-    <h3>{{article.title}}</h3>
+  <article class="col s12 m8" data-sr>
+    <h1 class="center-align">{{article.title}}</h1>
     <p class="headline">{{article.headline}}</p>
     <div class="divider"></div>
     <p>{{article.body|safe}}</p>
@@ -16,5 +16,11 @@
 {% block js %}
   {{block.super}}
   <script src="{% static 'js/highlight.pack.js' %}"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    $(document).ready(function(){
+      window.sr = new scrollReveal();
+    });
+  </script>
 {% endblock %}
