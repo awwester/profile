@@ -18,6 +18,9 @@ class Article(models.Model):
     tags = models.ManyToManyField(Tag)
     public = models.BooleanField(default=True)
 
+    class Meta:
+        ordering = ['-id']
+
     def get_absolute_url(self):
         return reverse('blog-article', kwargs={'pk': self.id})
 
