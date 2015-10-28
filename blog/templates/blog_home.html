@@ -30,12 +30,3 @@
     {% endfor %}
   </div>
 {% endblock %}
-
-{% block js %}
-  {{ block.super }}
-  <script>
-    $(document).ready(function(){
-      $(".button-collapse").sideNav();
-    });
-  </script>
-{% endblock %}
