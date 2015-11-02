@@ -8,6 +8,11 @@
       <p>Written on {{article.created}} by Adam</p>
       <p class="headline">{{article.headline}}</p>
     </blockquote>
+    {% if article.video_id %}
+      <div class="video-container" data-sr="wait 0.5s">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{article.video_id}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    {% endif %}
     <div class="divider"></div>
     <p>{{article.body|safe}}</p>
     <div class="divider"></div>
@@ -18,7 +23,7 @@
   </article>
   <aside class="hide-on-small-only">
     <div class="row">
-      <div id="subscribe-container">
+      <div id="subscribe-container" data-sr="wait 4s, enter top, move 50px">
         <p class="center-align">Notify me on new articles</p>
         <div class="input-field col s12">
           <input id="email-input" type="email" class="validate">

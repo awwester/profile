@@ -17,6 +17,7 @@ class Article(models.Model):
     body = models.TextField()
     tags = models.ManyToManyField(Tag)
     public = models.BooleanField(default=True)
+    video_id = models.CharField(max_length=15, blank=True, null=True)
 
     class Meta:
         ordering = ['-id']
