@@ -9,7 +9,11 @@
           <div class="card medium">
             <div class="card-image shrink">
               <a href="{{article.get_absolute_url}}">
-                <img src="http://lorempixel.com/800/300/nature/">
+                {% if article.video_id %}
+                  <img class="dark" src="//i.ytimg.com/vi/{{article.video_id}}/mqdefault.jpg">
+                {% else %}
+                  <img src="http://lorempixel.com/800/300/nature/">
+                {% endif %}
                 <span class="card-title">{{article.title}}</span>
               </a>
             </div>
