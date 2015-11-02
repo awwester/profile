@@ -6,7 +6,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    def save_slugs(apps):
+    def save_slugs(apps, schema_editor):
         Article = apps.get_model("blog", "Article")
 
         print('saving articles')
