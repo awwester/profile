@@ -138,6 +138,14 @@
       @extend .z-depth-5;
       margin: 3em;
     }
+
+    code {
+      background: #eee;
+      border: 1px solid #ddd;
+      border-radius:3px;
+      padding:1px;
+      color: #cc1100;
+    }
   }
 }
 
