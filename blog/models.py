@@ -1,5 +1,27 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.utils.text import slugify
+
+
+class SlugManager(models.Manager):
+    def filter_slug(self, *args):
+        return self.filter(slug=args[0])
+
+
+class SaveSlugTitle(models.Model):
+    "set the slug based on the title field"
+
+    slug = models.SlugField(db_index=True, unique=True,
+        editable=False, blank=True)
+    objects = SlugManager()
+
+    class Meta:
+        abstract = True
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+
+        super(SaveSlugTitle, self).save(*args, **kwargs)
 
 
 class Tag(models.Model):
@@ -10,7 +32,7 @@ class Tag(models.Model):
         return self.title
 
 
-class Article(models.Model):
+class Article(SaveSlugTitle):
     title = models.CharField(max_length=50)
     headline = models.CharField(max_length=150)
     created = models.DateField(auto_now_add=True)
@@ -23,7 +45,7 @@ class Article(models.Model):
         ordering = ['-id']
 
     def get_absolute_url(self):
-        return reverse('blog-article', kwargs={'pk': self.id})
+        return reverse('blog-article', kwargs={'slug': self.slug})
 
     def get_related_article(self):
         potential_articles = Article.objects.exclude(id=self.id)
