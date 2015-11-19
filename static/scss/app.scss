@@ -127,7 +127,22 @@
   padding-right: 4em;
 
   article {
-    h1, h2, h3 { font-weight: 300; }
+    h1, h2, h3, blockquote { font-weight: 300; }
+    
+    code.inline {
+      background: #eee;
+      border: 1px solid #ddd;
+      border-radius:3px;
+      padding:1px;
+      color: #cc1100;
+    }
+    
+    .article-body {
+      blockquote {
+        @extend .accent-text;
+        font-size: 1.3em;
+      }
+    }
 
     .headline {
       color: $brand-medium-gray;
@@ -137,14 +152,6 @@
     .video-container {
       @extend .z-depth-5;
       margin: 3em;
-    }
-
-    code.inline {
-      background: #eee;
-      border: 1px solid #ddd;
-      border-radius:3px;
-      padding:1px;
-      color: #cc1100;
     }
   }
 }

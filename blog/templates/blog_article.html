@@ -16,7 +16,7 @@
       </div>
     {% endif %}
     <div class="divider"></div>
-    <p>{{article.body|safe}}</p>
+    <section class="article-body">{{article.body|safe}}</p>
     <div class="divider"></div>
     <br>
     <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
