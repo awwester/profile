@@ -11,6 +11,8 @@
               <a href="{{article.get_absolute_url}}">
                 {% if article.video_id %}
                   <img class="dark" src="//i.ytimg.com/vi/{{article.video_id}}/mqdefault.jpg">
+                {% elif article.get_image_path %}
+                  <img src="{{ article.get_image_path }}">
                 {% else %}
                   <img src="http://lorempixel.com/800/300/nature/">
                 {% endif %}

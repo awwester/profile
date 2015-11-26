@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.core.urlresolvers import reverse
 from django.utils.text import slugify
 
@@ -51,6 +52,20 @@ class Article(SaveSlugTitle):
         potential_articles = Article.objects.exclude(id=self.id)
 
         return potential_articles.order_by('?').first()
+
+    def get_image_path(self):
+        tag_titles = []
+        tags = self.tags.all()
+
+        for t in tags:
+            tag_titles.append(t.title)
+
+        if 'Django' in tag_titles:
+            return static('img/topics/django.png')
+        elif 'Ember' in tag_titles:
+            return static('img/topics/ember.png')
+        elif 'Angular' in tag_titles:
+            return static('img/topics/angular.jpg')
 
     def __str__(self):
         return self.title
