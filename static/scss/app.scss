@@ -128,7 +128,7 @@
 
   article {
     h1, h2, h3, blockquote { font-weight: 300; }
-    
+
     code.inline {
       background: #eee;
       border: 1px solid #ddd;
@@ -136,7 +136,7 @@
       padding:1px;
       color: #cc1100;
     }
-    
+
     .article-body {
       blockquote {
         @extend .accent-text;
@@ -214,8 +214,24 @@
         background: $dark-texture;
         color: white;
       }
-
     }
+
+    .series-article-list {
+      padding: 10px;
+
+      a {
+        display: block;
+        margin-top: 3px;
+        margin-bottom: 3px;
+
+        &.active {
+          background-color: $brand-alt;
+          color: white;
+        }
+      }
+    }
+
+    .series-title { padding: 10px; }
   }
 }
 

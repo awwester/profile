@@ -33,12 +33,20 @@ class Tag(models.Model):
         return self.title
 
 
+class Series(models.Model):
+    title = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.title
+
+
 class Article(SaveSlugTitle):
     title = models.CharField(max_length=50)
     headline = models.CharField(max_length=150)
     created = models.DateField(auto_now_add=True)
     body = models.TextField()
     tags = models.ManyToManyField(Tag)
+    series = models.ForeignKey(Series, null=True, blank=True)
     public = models.BooleanField(default=True)
     video_id = models.CharField(max_length=15, blank=True, null=True)
 
@@ -47,6 +55,13 @@ class Article(SaveSlugTitle):
 
     def get_absolute_url(self):
         return reverse('blog-article', kwargs={'slug': self.slug})
+
+    def title_with_series(self):
+        if self.series:
+            series_title = self.series.title
+            return self.title.replace(series_title + " ", "")
+        else:
+            return self.title
 
     def get_related_article(self):
         potential_articles = Article.objects.exclude(id=self.id)
