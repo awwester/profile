@@ -22,6 +22,17 @@
     <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
       <i class="material-icons left" >arrow_back</i>Blog Home
     </a>
+    <div class="right">
+      <p>
+        <a class="twitter-follow-button right" href="https://twitter.com/awwester"
+           data-size="large" data-show-count="false">
+           Follow @awwester
+        </a>
+      </p>
+      <p>
+        <iframe src="https://ghbtns.com/github-btn.html?user=awwester&type=follow&count=false&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+      </p>
+    </div>
   </article>
   <aside class="hide-on-small-only">
     {% if article.series %}
@@ -71,6 +82,26 @@
 {% block js %}
   {{block.super}}
   <script src="{% static 'js/highlight.pack.js' %}"></script>
+  <script>
+    // initialize twitter for follow button
+    window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));
+  </script>
+
   <script>
     hljs.initHighlightingOnLoad();
 
