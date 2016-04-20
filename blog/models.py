@@ -92,3 +92,25 @@ class Article(SaveSlugTitle):
             return static('img/topics/ember.png')
         elif 'Angular' in tag_titles:
             return static('img/topics/angular.jpg')
+
+    def series_previous(self):
+        "return the previous article in the series or None"
+        if self.series:
+            series_articles_qs = Article.objects.filter(series=self.series)
+            series_article_index = list(series_articles_qs).index(self)
+
+            if series_article_index < len(series_articles_qs) - 1:
+                return series_articles_qs[series_article_index + 1]
+
+        return None
+
+    def series_next(self):
+        "return the next article in the series or None"
+        if self.series:
+            series_articles_qs = Article.objects.filter(series=self.series)
+            series_article_index = list(series_articles_qs).index(self)
+
+            if series_article_index > 0:
+                return series_articles_qs[series_article_index - 1]
+
+        return None

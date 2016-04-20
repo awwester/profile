@@ -17,19 +17,67 @@
     {% endif %}
     <div class="divider"></div>
     <section class="article-body">{{article.body|safe}}</p>
-    <div class="divider"></div>
-    <br>
-    <a class="waves-effect waves-light btn-large" href="{% url 'blog-home' %}">
-      <i class="material-icons left" >arrow_back</i>Blog Home
-    </a>
-    <div class="right">
-      <div class="twitter-container">
+    <hr>
+    <div class="hide-on-small-only">
+      {# this section is the footer for md+ screens #}
+      <div class="row">
+        <a class="waves-effect waves-light btn-flat" href="{% url 'blog-home' %}">
+          <i class="material-icons left" >library_books</i>Blog Home
+        </a>
+        <div class="right">
+          {% if article.series_previous %}
+            <a class="waves-effect waves-light btn" href="{{ article.series_previous.get_absolute_url }}">
+              <i class="material-icons left" >arrow_back</i>Prev
+            </a>
+          {% endif %}
+          {% if article.series_next %}
+            <a class="waves-effect waves-light btn" href="{{ article.series_next.get_absolute_url }}">
+              Next <i class="material-icons right" >arrow_forward</i>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="row right" data-sr="enter left, move 200px, wait 1.5s, over 0.5s">
+        <a class="twitter-follow-button" href="https://twitter.com/awwester"
+           data-size="large" data-show-count="false">
+           Follow @awwester
+        </a>
+        <iframe class="" src="https://ghbtns.com/github-btn.html?user=awwester&type=follow&count=false&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+      </div>
+    </div>
+    <div class="blog-footer hide-on-med-and-up">
+      {# this section is the footer for mobile screens #}
+      {% if article.series %}
+        <div class="row">
+          {% if article.series_previous %}
+            <div class="col s6">
+              <a class="btn" href="{{ article.series_previous.get_absolute_url }}">
+                <i class="material-icons" >arrow_back</i>
+              </a>
+            </div>
+          {% endif %}
+          {% if article.series_next %}
+            <div class="col s6">
+              <a class="btn right" href="{{ article.series_next.get_absolute_url }}">
+                <i class="material-icons" >arrow_forward</i>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="row">
+        <div class="col s12 center-align">
+          <a class="waves-effect waves-light btn-flat" href="{% url 'blog-home' %}">
+            <i class="material-icons left" >library_books</i>Blog Home
+          </a>
+        </div>
+      </div>
+      <div class="row right" data-sr="enter left, move 200px, wait 1.5s, over 0.5s">
         <a class="twitter-follow-button" href="https://twitter.com/awwester"
            data-size="large" data-show-count="false">
            Follow @awwester
         </a>
       </div>
-      <iframe src="https://ghbtns.com/github-btn.html?user=awwester&type=follow&count=false&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
     </div>
     <div class="margin" id="disqus_thread"></div>
   </article>
