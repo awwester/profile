@@ -49,12 +49,23 @@ class Article(SaveSlugTitle):
     series = models.ForeignKey(Series, null=True, blank=True)
     public = models.BooleanField(default=True)
     video_id = models.CharField(max_length=15, blank=True, null=True)
+    view_count = models.PositiveIntegerField(default=0)
 
     class Meta:
         ordering = ['-id']
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
         return reverse('blog-article', kwargs={'slug': self.slug})
+
+    def record_view(self):
+        """
+        keep track of how many times an article has been viewed
+        """
+        self.view_count = self.view_count + 1
+        self.save()
 
     def title_with_series(self):
         if self.series:
@@ -81,6 +92,3 @@ class Article(SaveSlugTitle):
             return static('img/topics/ember.png')
         elif 'Angular' in tag_titles:
             return static('img/topics/angular.jpg')
-
-    def __str__(self):
-        return self.title
