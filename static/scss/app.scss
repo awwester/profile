@@ -294,6 +294,11 @@
 }
 
 .blog__home {
+  img {
+    @include filter(brightness(60%));
+
+    &:hover { @include filter(brightness(100%)); }
+  }
   .chip-row {
     margin-top: 5px;
     margin-bottom: 5px;
