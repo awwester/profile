@@ -1,8 +1,10 @@
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.views.decorators.csrf import csrf_exempt
+
+from braces.views import StaffuserRequiredMixin
 
 from blog.models import Article, Tag
 from .models import EmailSubscribe
@@ -18,6 +20,11 @@ class HomeView(TemplateView):
         context['article_list'] = Article.objects.filter(public=True)[:2]
 
         return context
+
+
+class DashboardHomeListView(StaffuserRequiredMixin, ListView):
+    model = Article
+    template_name = 'dashboard_home.html'
 
 
 @csrf_exempt

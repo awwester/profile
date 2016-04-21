@@ -1,0 +1,23 @@
+{% extends "_dashboard.html" %}
+
+{% block dash_content %}
+  <table class="striped responsive-table">
+    <thead>
+      <tr>
+          <th data-field="title">Title</th>
+          <th data-field="created">Create Date</th>
+          <th data-field="count">View Count</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for article in article_list %}
+        <tr>
+          <td>{{article.title}}</td>
+          <td>{{article.created}}</td>
+          <td>{{article.view_count}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
