@@ -15,8 +15,10 @@ class BlogArticleView(DetailView):
     model = Article
 
     def get(self, request, *args, **kwargs):
-        # record the article view
-        self.get_object().record_view()
+        # record the article view if not staff user
+        if not request.user.is_staff:
+            self.get_object().record_view()
+
         return super(BlogArticleView ,self).get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
