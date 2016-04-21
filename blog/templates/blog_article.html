@@ -87,8 +87,10 @@
         <h5 class="series-title">{{ article.series|title }} Series</h5>
         <div class="series-article-list">
           {% for series_article in article.series.article_set.all|dictsort:"id" %}
-            <a class="waves-effect btn-flat{% if article.id == series_article.id %} active{% endif %}" href="{{ series_article.get_absolute_url }}">
-              {{ series_article.title_with_series }}</a>
+            {% if series_article.public %}
+              <a class="waves-effect btn-flat{% if article.id == series_article.id %} active{% endif %}" href="{{ series_article.get_absolute_url }}">
+                {{ series_article.title_with_series }}</a>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
