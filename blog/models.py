@@ -51,6 +51,12 @@ class Article(SaveSlugTitle):
     video_id = models.CharField(max_length=15, blank=True, null=True)
     view_count = models.PositiveIntegerField(default=0)
 
+    """
+    show_article_section will determine if the article is shown on the main
+    blog articles page.
+    """
+    show_article_section = models.BooleanField(default=True)
+
     class Meta:
         ordering = ['-id']
 

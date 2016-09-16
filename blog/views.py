@@ -7,7 +7,7 @@ from .models import Article
 
 class BlogHomeView(ListView):
     template_name = "blog_home.html"
-    queryset = Article.objects.filter(public=True)
+    queryset = Article.objects.filter(public=True, show_article_section=True)
 
 
 class BlogArticleView(DetailView):
