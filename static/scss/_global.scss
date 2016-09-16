@@ -30,6 +30,12 @@ img {
   color: #777;
 }
 
+// material icons suck, sometimes you have to bring them down.
+.icon-down {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
 @media(max-width: $small-screen){
   h1 { font-size: 3rem; }
   h2 { font-size: 2.5rem; }
