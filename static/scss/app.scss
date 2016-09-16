@@ -6,6 +6,8 @@
 @import "keyframes";
 @import "global";
 
+// scripts/sass.sh to run sass watch
+
 
 /*
   1. Home
@@ -40,8 +42,12 @@
       width: 100%;
       color: white;
       position: absolute;
-      bottom: 50%;
+      bottom: 30%;
       text-align: center;
+    }
+
+    @media(max-width: $small-screen){
+      .overlay { bottom: 25%; }
     }
   }
 
@@ -96,8 +102,6 @@
       color: inherit;
       padding-left: 15px;
       padding-right: 15px;
-
-      &:hover { color: darken(#fff, 10%);}
     }
   }
 }
@@ -246,6 +250,8 @@
     i { font-size: 1.7rem; }
 
     li { width: 25%; }
+
+    &:hover { color: darken(#fff, 10%);}
   }
 
   .side-nav {
