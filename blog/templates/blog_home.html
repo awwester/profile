@@ -17,7 +17,9 @@
                 {% else %}
                   <img src="http://lorempixel.com/800/300/nature/">
                 {% endif %}
-                <span class="card-title">{{article.title}}</span>
+                {% if article.show_card_title %}
+                  <span class="card-title">{{article.title}}</span>
+                {% endif %}
               </a>
             </div>
             <div class="card-content">

@@ -57,6 +57,9 @@ class Article(SaveSlugTitle):
     """
     show_article_section = models.BooleanField(default=True)
 
+    # on some articles we don't want to show the title on the card
+    show_card_title = models.BooleanField(default=True)
+
     class Meta:
         ordering = ['-id']
 
