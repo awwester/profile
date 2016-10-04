@@ -102,6 +102,10 @@
       color: inherit;
       padding-left: 15px;
       padding-right: 15px;
+
+      &:hover {
+        color: $brand-dark;
+      }
     }
   }
 }
