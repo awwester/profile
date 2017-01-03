@@ -51,6 +51,7 @@ class SendContactView(CsrfExemptMixin, JsonRequestResponseMixin, View):
             return self.render_bad_request_response(error_dict)
 
         subject = "[www.adamwester.me] message from %s %s" % (first_name, last_name)
+        message = message + "\n\n%s" % email
 
         send_mail(subject, message, "awwester@gmail.com", ["awwester@gmail.com"], fail_silently=True)
         return self.render_json_response({"message": "Your contact email has been sent."})
