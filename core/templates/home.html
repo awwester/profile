@@ -331,18 +331,21 @@
 
       if(email && firstName && message){
         // all fields are filled out, send post request to server
-        $.post("{% url 'contact' %}", {
-          'email': email,
-          'first_name': firstName,
-          'last_name': lastName,
-          'message': message,
-        }).then(function(){
+        var data = {
+          "email": email,
+          "first_name": firstName,
+          "last_name": lastName,
+          "message": message,
+        };
+        var json = JSON.stringify(data);
+
+        $.post("{% url 'contact' %}", json).then(function(){
           var successText = "Your message has been sent successfully!";
           formElem.trigger("reset");
           submitLabelElem.text(successText);
           submitLabelElem.removeClass('hide error').addClass('success');
         }, function(){
-          var errorText = "There was an error sending your mail, try again later?";
+          var errorText = "There was an error sending your contact, try again later?";
           submitLabelElem.text(errorText);
           submitLabelElem.removeClass('hide success').addClass('error');
         });

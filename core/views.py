@@ -1,10 +1,12 @@
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import View, TemplateView, ListView
 from django.views.decorators.csrf import csrf_exempt
 
-from braces.views import StaffuserRequiredMixin
+from braces.views import StaffuserRequiredMixin, JsonRequestResponseMixin, \
+                         CsrfExemptMixin
+
 
 from blog.models import Article, Tag
 from .models import EmailSubscribe
@@ -27,22 +29,31 @@ class DashboardHomeListView(StaffuserRequiredMixin, ListView):
     template_name = 'dashboard_home.html'
 
 
-@csrf_exempt
-def contact(request):
-    "receive a contact AJAX request and try to send an email"
-    if request.method == "POST":
-        try:
-            send = send_mail('New Message Received from ' + request.POST.get('first_name') + '' + request.POST.get('last_name'),
-                request.POST.get('message'), request.POST.get('email'), ['awwester@gmail.com'], fail_silently=False)
+class SendContactView(CsrfExemptMixin, JsonRequestResponseMixin, View):
+    require_json = True
 
-            if send == 1:
-                return HttpResponse()
-            else:
-                return HttpResponse(status=400)
-        except:
-            return HttpResponse(status=400)
-    else:
-        return HttpResponse('this is only for AJAX Posts')
+    def clean_field(self, field_name):
+        field = self.request_json[field_name]
+
+        if not len(field):
+            raise KeyError
+
+        return field
+
+    def post(self, request, *args, **kwargs):
+        try:
+            email = self.clean_field("email")
+            first_name = self.clean_field("first_name")
+            last_name = self.clean_field("last_name")
+            message = self.clean_field("message")
+        except KeyError:
+            error_dict = {"message": "you must include all fields in the contact request"}
+            return self.render_bad_request_response(error_dict)
+
+        subject = "[www.adamwester.me] message from %s %s" % (first_name, last_name)
+
+        send_mail(subject, message, "awwester@gmail.com", ["awwester@gmail.com"], fail_silently=True)
+        return self.render_json_response({"message": "Your contact email has been sent."})
 
 
 @csrf_exempt
