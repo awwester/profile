@@ -79,24 +79,13 @@
       <div class="container">
         <h2 class="section-header">My Projects</h2>
         <div class="row">
-          <div class="col s12 m6" data-sr="enter left, move 50px">
-            <div class="card z-depth-3">
-              <div class="card-image shrink">
-                <img class="activator" src="{% static 'img/sites/travelblogwave.png' %}">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Travel Blog Wave<i class="material-icons right">more_vert</i></span>
-                <p><a href="http://www.travelblogwave.com" target="_blank">Visit TBW</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Travel Blog Wave<i class="material-icons right">close</i></span>
-                <p>Travel Blog Wave is a personal project, and it is my baby. I started out my location-independence trying to start a travel blog, but quickly realized it wasn't viable. I switched to creating a travel blog platform that other's could use as well. TBW is great for me to try out new things and I'm actively changing it for practice when I have free time.</p>
-                <span class="chip">Django</span>
-                <span class="chip">Google Map API</span>
-                <span class="chip">Heroku</span>
-              </div>
-            </div>
-          </div>
+          {% for project in project_list %}
+            {% include 'project_display.html' %}
+          {% endfor %}
+        </div>
+
+        <!-- <div class="row">
+
           <div class="col s12 m6" data-sr="enter right, move 50px">
             <div class="card z-depth-3">
               <div class="card-image shrink">
@@ -240,7 +229,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
 

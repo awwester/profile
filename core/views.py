@@ -9,14 +9,20 @@ from braces.views import StaffuserRequiredMixin, JsonRequestResponseMixin, \
 
 
 from blog.models import Article, Tag
+from projects.models import Project
 from .models import EmailSubscribe
 
 
 class HomeView(TemplateView):
+    """
+    Landing page for adamwester.me
+    """
+    
     template_name = "home.html"
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
+        context['project_list'] = Project.objects.filter(hidden=False)
         context['tag_list'] = Tag.objects.all()
         context['article_count'] = Article.objects.filter(public=True).count()
         context['article_list'] = Article.objects.filter(public=True)[:2]
