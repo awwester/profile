@@ -115,6 +115,11 @@ LOGIN_URL = '/admin/login/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+
+# Storage Settings
+STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+DEFAULT_FILE_STORAGE = "django_s3_storage.storage.S3Storage"
+
 # AWS Settings
 AWS_S3_BUCKET_NAME = "awwester-profile"
 AWS_S3_BUCKET_NAME_STATIC = AWS_S3_BUCKET_NAME
