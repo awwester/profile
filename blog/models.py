@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.text import slugify
 
 
@@ -46,7 +46,7 @@ class Article(SaveSlugTitle):
     created = models.DateField(auto_now_add=True)
     body = models.TextField()
     tags = models.ManyToManyField(Tag)
-    series = models.ForeignKey(Series, null=True, blank=True)
+    series = models.ForeignKey(Series, on_delete=models.CASCADE, null=True, blank=True)
     public = models.BooleanField(default=True)
     video_id = models.CharField(max_length=15, blank=True, null=True)
     view_count = models.PositiveIntegerField(default=0)
