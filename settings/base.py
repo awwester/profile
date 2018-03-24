@@ -43,6 +43,7 @@ INSTALLED_APPS = (
 
     'core',
     'blog',
+    'projects',
 )
 
 MIDDLEWARE_CLASSES = (
