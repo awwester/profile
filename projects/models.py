@@ -6,13 +6,19 @@ class Project(models.Model):
     """
 
     title = models.CharField(max_length=50)
-    url = models.URLField()
+    url = models.URLField(blank=True)
     description = models.CharField(max_length=500)
     image = models.ImageField(upload_to='projects/')
     hidden = models.BooleanField(default=False)
 
+    # determine the order the projects should be shown
+    order = models.IntegerField(default=0)
+
     # comma separated field
     tags = models.CharField(max_length=200, blank=True)
+
+    class Meta:
+        ordering = ['order']
 
     @property
     def tag_list(self):
