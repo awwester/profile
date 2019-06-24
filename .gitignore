@@ -2,5 +2,4 @@
 *.pyc
 *.sqlite3
 .DS_Store
-
-materialize_bugs.txt
+.env
