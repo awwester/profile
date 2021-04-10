@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.templatetags.static import static
 from django.urls import reverse
 from django.utils.text import slugify
 
@@ -51,10 +51,7 @@ class Article(SaveSlugTitle):
     video_id = models.CharField(max_length=15, blank=True, null=True)
     view_count = models.PositiveIntegerField(default=0)
 
-    """
-    show_article_section will determine if the article is shown on the main
-    blog articles page.
-    """
+    # Determines if the article is shown on the main blog articles page.
     show_article_section = models.BooleanField(default=True)
 
     # on some articles we don't want to show the title on the card
