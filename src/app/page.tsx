@@ -1,20 +1,23 @@
 import Image from "next/image";
 
+import SectionTitle from "@/components/text/section_title";
+import ProjectTag from "@/components/project_tag";
+
 
 export default function Home() {
   const projects = [
-        { title: 'Lead Sherpa', description: 'Real Estate Investment Platform', image: '/images/projects/leadsherpa.png' },
-        { title: 'Project City', description: 'Learning platform for animated movies and art', image: '/images/projects/project_city.png' },
-        { title: 'Joe Coffee', description: 'Mobile ordering for independent coffee shops', image: '/images/projects/joe_coffee.png' },
-        { title: 'Bnb Sync', description: 'AirBnb integration with Xero accounting', image: '/images/projects/bnbsync.png' },
-        { title: 'Frontier Signal', description: 'Usage of data science to improve hiring', image: '/images/projects/frontier_signal.png' },
-        { title: 'Real Life Global', description: 'Online English learning platform', image: '/images/projects/real_life_global.png' },
-        { title: 'Vested Yeti', description: 'Social web browsing', image: '/images/projects/vested_yeti.png' },
-        { title: 'Go Advocate', description: 'Canadian Political Campaigns', image: '/images/projects/goadvocate.png' },
+        { title: 'Lead Sherpa', description: 'Real Estate Investment Platform', image: '/images/projects/leadsherpa.png', tags: ['Django Rest Framework', 'React', 'Twilio', 'AWS', 'Braintree', 'PWA', 'Telnyx'] },
+        { title: 'Project City', description: 'Learning platform for animated movies and art', image: '/images/projects/project_city.png', tags: ['Django Rest Framework', 'React', 'Stripe', 'React Native', 'AWS'] },
+        { title: 'Go Advocate', description: 'Canadian political campaigns with calls, email, and letters', image: '/images/projects/goadvocate.png', tags: ['Django', 'AWS', 'Stripe', 'Twilio', 'OpenAI'] },
+        { title: 'Joe Coffee', description: 'Mobile ordering for independent coffee shops', image: '/images/projects/joe_coffee.png', tags: ['Django Rest Framework', 'Heroku', 'Stripe', 'React'] },
+        { title: 'Bnb Sync', description: 'AirBnb integration with Xero accounting', image: '/images/projects/bnbsync.png', tags: ['Django Rest Framework', 'React', 'AWS', 'Stripe', 'Xero', 'AirBnb'] },
+        { title: 'Frontier Signal', description: 'Usage of data science to improve hiring', image: '/images/projects/frontier_signal.png', tags: ['Django', 'Heroku'] },
+        { title: 'Real Life Global', description: 'Online English learning platform', image: '/images/projects/real_life_global.png', tags: ['Django Rest Framework', 'Ember.js', 'AWS'] },
+        { title: 'Vested Yeti', description: 'Social web browsing', image: '/images/projects/vested_yeti.png', tags: ['Django Rest Framework', 'React', 'Chrome Extension', 'React Native', 'AWS'] },
     ];
 
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-white min-h-screen">
             <nav className="bg-blue-500 py-4">
                 <div className="container mx-auto flex justify-between items-center">
                     <div className="text-white font-bold text-xl">Adam Wester - SaaS Specialist</div>
@@ -28,14 +31,14 @@ export default function Home() {
 
             {/* About Section */}
             <section id="about" className="container mx-auto py-32">
-                <h2 className="text-3xl font-bold mb-4">About Me</h2>
-                <p className="text-gray-700">I am Adam Wester, a software developer with over 15 years of experience in the industry. I specialize in working with small to medium-sized startups, focusing on building SaaS companies from ideation to execution. With a passion for innovation and problem-solving, I strive to create scalable and efficient solutions that drive business growth.</p>
+                <SectionTitle>About Me</SectionTitle>
+                <p className="text-gray-700">I am Adam Wester, a software developer and engineering manager with over 15 years of experience in the industry. I specialize in building SaaS solutions for small to medium-sized startups, focusing on building from ideation to execution. With a passion for business and problem-solving, I strive to create scalable and efficient solutions that drive business growth.</p>
             </section>
 
             {/* Projects Section */}
             <section id="projects" className="bg-slate-200 py-16 border-slate-300 border-y-2">
                 <div className="container mx-auto">
-                    <h2 className="text-3xl font-bold mb-4">Projects</h2>
+                    <SectionTitle>Projects</SectionTitle>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-32">
                         {projects.map((project, index) => (
                             <div key={index} className="bg-white shadow-md rounded">
@@ -50,6 +53,9 @@ export default function Home() {
                                 <div className="p-4">
                                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                                   <p className="text-gray-700">{project.description}</p>
+                                  <div className="mt-4">
+                                      {project.tags.map((tag, index) => <ProjectTag key={index}>{tag}</ProjectTag>)}
+                                  </div>
                                 </div>
                             </div>
                         ))}
@@ -59,7 +65,7 @@ export default function Home() {
 
             {/* Contact Section */}
             <section id="contact" className="container mx-auto py-32">
-                <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
+                <SectionTitle>Contact me</SectionTitle>
                 <p className="text-gray-700">Feel free to reach out to me for any inquiries or collaboration opportunities:</p>
                 <ul className="mt-4">
                     <li className="flex items-center">
