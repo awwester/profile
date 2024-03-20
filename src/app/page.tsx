@@ -30,9 +30,14 @@ export default function Home() {
             </nav>
 
             {/* About Section */}
-            <section id="about" className="container mx-auto py-32">
-                <SectionTitle>About Me</SectionTitle>
-                <p className="text-gray-700">I am Adam Wester, a software developer and engineering manager with over 15 years of experience in the industry. I specialize in building SaaS solutions for small to medium-sized startups, focusing on building from ideation to execution. With a passion for business and problem-solving, I strive to create scalable and efficient solutions that drive business growth.</p>
+            <section id="about" className="container mx-auto py-32 flex items-center">
+                <div className="mr-16">
+                  <Image src="/images/logos/adam.jpg" alt="Adam Wester" width={600} height={600} className="rounded-full" />
+                </div>
+                <div>
+                  <SectionTitle>About Me</SectionTitle>
+                  <p className="text-gray-700">I am Adam Wester, a software developer and engineering manager with over 15 years of experience in the industry. I specialize in building SaaS solutions for small to medium-sized startups, focusing on building from ideation to execution. With a passion for business and problem-solving, I strive to create scalable and efficient solutions that drive business growth.</p>
+                </div>
             </section>
 
             {/* Projects Section */}
@@ -72,7 +77,7 @@ export default function Home() {
                         <svg className="h-5 w-5 text-blue-500 mr-2" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
                             <path d="M22 2L2 22h20zm0 0L2 2v20z"></path>
                         </svg>
-                        <span>LinkedIn: linkedin.com/in/awwester</span>
+                        <span><a href="https://www.linkedin.com/in/awwester" target="_blank">LinkedIn</a></span>
                     </li>
                 </ul>
             </section>
