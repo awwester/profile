@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import SectionTitle from "@/components/text/section_title";
 import ProjectTag from "@/components/project_tag";
+import ContactForm from "@/components/forms/contact";
 
 
 export default function Home() {
@@ -72,14 +73,13 @@ export default function Home() {
             <section id="contact" className="container mx-auto py-32">
                 <SectionTitle>Contact me</SectionTitle>
                 <p className="text-gray-700">Feel free to reach out to me for any inquiries or collaboration opportunities:</p>
-                <ul className="mt-4">
+                {/* <ul className="mt-4">
                     <li className="flex items-center">
-                        <svg className="h-5 w-5 text-blue-500 mr-2" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
-                            <path d="M22 2L2 22h20zm0 0L2 2v20z"></path>
-                        </svg>
+                        <Image src="/images/social/linkedin.png" alt="LinkedIn" width={24} height={24} className="mr-2" />
                         <span><a href="https://www.linkedin.com/in/awwester" target="_blank">LinkedIn</a></span>
                     </li>
-                </ul>
+                </ul> */}
+                <ContactForm />
             </section>
 
             {/* Footer */}
