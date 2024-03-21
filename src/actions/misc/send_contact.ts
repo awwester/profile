@@ -11,8 +11,8 @@ export async function sendContact(prevState: any, formData: FormData) {
       from: "onboarding@resend.dev",
       to: process.env.NODE_ENV === "development" ? "delivered@resend.dev" : 'awwester@gmail.com',
       subject: `Message from ${formData.get("name")}`,
-      text: formData.get("message"),
-      reply_to: formData.get("email"),
+      text: formData.get("message") as string,
+      reply_to: formData.get("email") as string,
     });
     // Send a success response
     return {message: "Email sent successfully!", success: true}
