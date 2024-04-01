@@ -62,7 +62,7 @@ return (
             <div>
                 <SectionTitle>About Me</SectionTitle>
                 <p className="text-gray-700">I am Adam Wester, a software developer and engineering manager with over 15 years of experience in the industry. I specialize in building SaaS solutions for small to medium-sized startups, focusing on building from ideation to execution. With a passion for business and problem-solving, I strive to create scalable and efficient solutions that drive business growth.</p>
-                <p className="text-gray-700 mt-4">If you're looking for a quality, experienced developer to help build your startup idea, then you've found the right place.</p>
+                <p className="text-gray-700 mt-4">If you&apos;re looking for a quality, experienced developer to help build your startup idea, then you&apos;ve found the right place.</p>
             </div>
         </section>
 
