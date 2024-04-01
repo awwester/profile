@@ -55,18 +55,19 @@ return (
         )}
 
         {/* About Section */}
-        <section id="about" className="container mx-auto py-8 md:py-32 px-4 md:px-0"> {/* Added padding for mobile */}
-            <div className="mx-auto md:mr-16 mb-8 md:mb-0 max-w-xs md:max-w-none">
-            <Image src="/images/logos/adam.jpg" alt="Adam Wester" width={300} height={300} className="rounded-full" />
+        <section id="about" className="container mx-auto py-8 md:py-32 px-4 md:px-0 md:flex items-center">
+            <div className="mx-auto p-8 md:p-0 md:mr-16 mb-8 md:mb-0 max-w-xs md:max-w-none">
+                <Image src="/images/logos/adam.jpg" alt="Adam Wester" width={500} height={500} className="rounded-full" />
             </div>
             <div>
-            <SectionTitle>About Me</SectionTitle>
-            <p className="text-gray-700">I am Adam Wester, a software developer and engineering manager with over 15 years of experience in the industry. I specialize in building SaaS solutions for small to medium-sized startups, focusing on building from ideation to execution. With a passion for business and problem-solving, I strive to create scalable and efficient solutions that drive business growth.</p>
+                <SectionTitle>About Me</SectionTitle>
+                <p className="text-gray-700">I am Adam Wester, a software developer and engineering manager with over 15 years of experience in the industry. I specialize in building SaaS solutions for small to medium-sized startups, focusing on building from ideation to execution. With a passion for business and problem-solving, I strive to create scalable and efficient solutions that drive business growth.</p>
+                <p className="text-gray-700 mt-4">If you're looking for a quality, experienced developer to help build your startup idea, then you've found the right place.</p>
             </div>
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="bg-slate-200 py-8 md:py-16 px-4 md:px-0"> {/* Added padding for mobile */}
+        <section id="projects" className="bg-slate-200 py-8 md:py-16 px-4 md:px-0">
             <div className="container mx-auto">
                 <SectionTitle>Projects</SectionTitle>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-32">
